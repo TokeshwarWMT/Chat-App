@@ -15,11 +15,11 @@
         var socket = io('http://localhost:3000')
 
         socket.on('message', data => {
-            document.addEventListener('h1').innerHTML = data;
+            document.querySelector('h1').innerHTML = data;
         })
 
         const sendMessage = () => {
-            const msgInput = document.querySelector('.massage')
+            const msgInput = document.querySelector('.message')
             const message = msgInput.value
             socket.emit('message', message)
         }

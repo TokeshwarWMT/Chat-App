@@ -5,7 +5,7 @@ const io = require('socket.io')(server)
 
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.render('home')
 });
 
@@ -19,4 +19,4 @@ io.on('connection', (socket) => {
     socket.on('message', (data) => {
         socket.broadcast.emit('message', data)
     })
-})
+});
